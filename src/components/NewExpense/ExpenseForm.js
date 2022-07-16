@@ -18,9 +18,18 @@ const ExpenseForm = () => {
     // console.log(event.target.value);
     // setEnteredTitle(event.target.value);
 
-    setUserInput({
-      ...userInput, // Saves other input values
-      enteredTitle: event.target.value,
+    // setUserInput({
+    //   ...userInput, // Saves other input values
+    //   enteredTitle: event.target.value,
+    // });
+
+    // Safer way to use later state snapshot
+    // if updated state depends on a previous state
+    setUserInput((prevState) => {
+      return {
+        ...prevState,
+        enteredTitle: event.target.value,
+      };
     });
   };
 
