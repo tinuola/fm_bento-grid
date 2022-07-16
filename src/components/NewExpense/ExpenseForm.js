@@ -2,51 +2,22 @@ import { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-  // Calling useState multiple times
-  // const [enteredTitle, setEnteredTitle] = useState('');
-  // const [enteredAmount, setEnteredAmount] = useState('');
-  // const [enteredDate, setEnteredDate] = useState('');
-
-  // Calling useState once
-  const [userInput, setUserInput] = useState({
-    enteredTitle: '',
-    enteredAmount: '',
-    enteredDate: '',
-  });
+  // Preferred to use multiple states
+  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredDate, setEnteredDate] = useState('');
 
   const titleChangeHandler = (event) => {
     // console.log(event.target.value);
-    // setEnteredTitle(event.target.value);
-
-    // setUserInput({
-    //   ...userInput, // Saves other input values
-    //   enteredTitle: event.target.value,
-    // });
-
-    // Safer way to use later state snapshot
-    // if updated state depends on a previous state
-    setUserInput((prevState) => {
-      return {
-        ...prevState,
-        enteredTitle: event.target.value,
-      };
-    });
+    setEnteredTitle(event.target.value);
   };
 
   const amountChangeHandler = (event) => {
-    // setEnteredAmount(event.target.value);
-    setUserInput({
-      ...userInput,
-      enteredAmount: event.target.value,
-    });
+    setEnteredAmount(event.target.value);
   };
 
   const dateChangeHandler = (event) => {
-    // setEnteredDate(event.target.value);
-    setUserInput({
-      ...userInput,
-      enteredDate: event.target.value,
-    });
+    setEnteredDate(event.target.value);
   };
 
   return (
