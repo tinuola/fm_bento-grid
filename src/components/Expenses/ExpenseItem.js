@@ -5,11 +5,6 @@ import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css';
 
 const ExpenseItem = (props) => {
-  // React hooks start with "use"
-  // Hooks are called directly inside component-functions
-
-  // useState returns array of two elements: [value (current state), updating function]
-
   const [title, setTitle] = useState(props.title);
 
   const clickBtn = () => {
