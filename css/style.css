@@ -1,18 +1,62 @@
 :root {
-  --var: value;
+  --purple-100: hsl(254, 88%, 90%);
+  --purple-500: hsl(256, 67%, 59%);
+  --yellow-100: hsl(31, 66%, 93%);
+  --yellow-500: hsl(39, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
 }
-
-/***********/
-/* Section */
-/***********/
 
 body {
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  /* grid-template-rows: 1fr auto; */
+  grid-template-rows: 1fr auto;
   justify-items: center;
   align-items: center;
-  background-image: url('../assets/images/');
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  min-width: 320px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+
+.bg-primary {
+  background-color: var(--purple-500);
+  color: var(--white);
+}
+
+.bg-primary--light {
+  background-color: var(--purple-100);
+}
+
+.bg-secondary {
+  background-color: var(--yellow-500);
+}
+
+.bg-secondary--light {
+  background-color: var(--yellow-100);
+}
+
+.bg-primary--light,
+.bg-secondary,
+.bg-secondary--light {
+  color: var(--black);
+}
+
+.card-title {
+}
+.card-subtitle {
 }
 
 .fm-byline-text {
@@ -29,4 +73,7 @@ body {
 /* Media Queries */
 /*****************/
 @media only screen and (min-width: 800px) {
+  main {
+    grid-template-areas: '';
+  }
 }
